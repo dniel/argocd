@@ -1,0 +1,11 @@
+{
+  "appName": "prometheus",
+  "userGivenName": "prometheus",
+  "destNamespace": "default",
+  "destServer": "https://10.0.20.130:6443",
+  "srcPath": "apps/prometheus/overlays/services",
+  "srcRepoURL": "https://github.com/dniel/argocd.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
