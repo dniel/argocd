@@ -242,7 +242,7 @@ metadata:
     app.kubernetes.io/instance: traefik-traefik
 spec:
   entryPoints:
-    - websecure
+    - traefik
   routes:
     - match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
       kind: Rule
