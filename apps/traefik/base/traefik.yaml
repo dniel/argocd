@@ -205,6 +205,7 @@ spec:
             - "--providers.kubernetescrd"
             - "--providers.kubernetesingress"
             - "--entrypoints.websecure.http.tls=true"
+            - "--log.level=DEBUG"
       volumes:
         - name: data
           emptyDir: {}
