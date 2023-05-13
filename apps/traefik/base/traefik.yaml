@@ -243,6 +243,8 @@ metadata:
 spec:
   entryPoints:
     - traefik
+    - web
+    - websecure
   routes:
     - match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
       kind: Rule
