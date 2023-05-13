@@ -230,7 +230,7 @@ metadata:
 spec:
   controller: traefik.io/ingress-controller
 ---
-# Source: traefik/templates/dashboard-ingressroute.yaml
+# Source: traefik/templates/dashboard-ingressroute-patch.yaml
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
