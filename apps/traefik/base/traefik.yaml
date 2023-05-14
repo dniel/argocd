@@ -259,7 +259,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: traefik-unknown-site
-  namespace: traefik
+  namespace: default
   annotations:
   labels:
     app.kubernetes.io/name: traefik
