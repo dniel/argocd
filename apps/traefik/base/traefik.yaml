@@ -199,6 +199,7 @@ spec:
             - "--entrypoints.websecure.address=:8443/tcp"
             - "--api.dashboard=true"
             - "--api.insecure=true"
+            - "--api.debug=true"
             - "--ping=true"
             - "--metrics.prometheus=true"
             - "--metrics.prometheus.entrypoint=metrics"
