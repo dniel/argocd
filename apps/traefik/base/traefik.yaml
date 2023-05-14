@@ -253,3 +253,25 @@ spec:
       services:
         - name: api@internal
           kind: TraefikService
+
+---
+# Source: traefik/templates/dashboard-ingressroute-patch.yaml
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-unknown-site
+  namespace: traefik
+  annotations:
+  labels:
+    app.kubernetes.io/name: traefik
+    app.kubernetes.io/instance: traefik-traefik
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: HostRegexp(`{catchall:.*}`)
+      kind: Rule
+      priority: 1
+      services:
+        - name: nginx-deployment
+          port: 80
