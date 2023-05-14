@@ -233,23 +233,25 @@ spec:
   controller: traefik.io/ingress-controller
 ---
 # Source: traefik/templates/dashboard-ingressroute-patch.yaml
-#apiVersion: traefik.io/v1alpha1
-#kind: IngressRoute
-#metadata:
-#  name: traefik-dashboard
-#  namespace: traefik
-#  annotations:
-#  labels:
-#    app.kubernetes.io/name: traefik
-#    app.kubernetes.io/instance: traefik-traefik
-#spec:
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-dashboard
+  namespace: traefik
+  annotations:
+  labels:
+    app.kubernetes.io/name: traefik
+    app.kubernetes.io/instance: traefik-traefik
+spec:
 #  entryPoints:
 #    - traefik
 #    - web
 #    - websecure
-#  routes:
-#    - match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
-#      kind: Rule
-#      services:
-#        - name: api@internal
-#          kind: TraefikService
+  routes:
+    - match: >-
+        Host(`traefik.example.com`) &&
+        (PathPrefix(`/api`) || PathPrefix(`/dashboard`))
+      kind: Rule
+      services:
+        - name: api@internal
+          kind: TraefikService
