@@ -277,7 +277,6 @@ spec:
       middlewares:
         - name: unknown-site-replacepath
           namespace: default
-          kind: Middleware
 
 ---
 # Replace the path of the request before forwarding it
